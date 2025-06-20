@@ -10,10 +10,11 @@ html {
   
   /* Estilo para o header */
   .header {
-    background-color: #6a0dad; /* Roxo principal */
+    background-color: #000000; /* Roxo principal */
     color: #fff;
     padding: 100px 0;
     text-align: center;
+    border: 4px solid #6a0dad; /* Borda roxa */
   }
   
   .header h1 {
