@@ -100,8 +100,3 @@ Este projeto está sob a licença MIT. Consulte o arquivo `LICENSE` para mais de
 ⭐ Se curtir o projeto, **deixe uma estrela!**
 
 ```
-
----
-
-Se quiser, posso também montar o conteúdo do `requirements.txt` com base nas bibliotecas que você usou — quer? Ou prefere gerar o [`.gitattributes`](f) pra corrigir a linguagem mostrada no GitHub?
-```
