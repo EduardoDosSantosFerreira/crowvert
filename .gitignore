@@ -1,2 +1,0 @@
-git rm --cached output/main.exe
-git rm --cached build/main/main.pkg

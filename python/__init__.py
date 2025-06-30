@@ -6,4 +6,6 @@ from .docx_to_pdf import docx_to_pdf
 from .pdf_to_docx import pdf_to_docx
 from .svg_to_png import svg_to_png
 from .pdf_to_png import pdf_to_png
+from .rtf_to_docx import rtf_to_docx
 from python.png_to_pdf import png_to_pdf
+from .rtf_to_pdf import rtf_to_pdf

@@ -6,7 +6,7 @@ import sys
 # Ajusta o path para importar módulos
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-# Importa as funções de conversão existentes
+# Adicione esta importação junto com as outras
 from python import (
     txt_to_docx,
     docx_to_txt,
@@ -20,10 +20,15 @@ from python import (
     jpg_to_png,
     png_to_ico,
     csv_to_xlsx,
+    rtf_to_docx,
+    rtf_to_pdf,  
 )
 
+# Modifique o dicionário DOCUMENTOS para incluir a nova conversão
 DOCUMENTOS = {
     "TXT → DOCX": (txt_to_docx, ".docx", [("Arquivos TXT", "*.txt")]),
+    "RTF → DOCX": (rtf_to_docx, ".docx", [("Arquivos RTF", "*.rtf")]),  # Nova opção
+    "RTF → PDF": (rtf_to_pdf, ".pdf", [("Arquivos RTF", "*.rtf")]),  # Nova opção
     "DOCX → TXT": (docx_to_txt, ".txt", [("Arquivos DOCX", "*.docx")]),
     "DOCX → PDF": (docx_to_pdf, ".pdf", [("Arquivos DOCX", "*.docx")]),
     "PDF → DOCX": (pdf_to_docx, ".docx", [("Arquivos PDF", "*.pdf")]),
@@ -301,4 +306,3 @@ class ConverterApp(tk.Tk):
 if __name__ == "__main__":
     app = ConverterApp()
     app.mainloop()
-      
