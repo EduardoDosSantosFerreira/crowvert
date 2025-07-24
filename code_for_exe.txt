@@ -1,1 +1,4 @@
-pyinstaller --onefile --noconsole --clean --name crowvert --icon "D:\programs\crowvert\corvo.ico" --upx-dir "C:\Users\CALLCENTER\Downloads\upx-5.0.1-win64" main.py
+pyinstaller --onefile --noconsole --clean --name crowvert --icon "corvo.ico" main.py
+
+para minificar use:
+pyinstaller --onefile --noconsole --clean --name crowvert --icon corvo.ico --upx-dir "C:\Users\CALLCENTER\Downloads\upx-5.0.1-win64" main.py
