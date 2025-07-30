@@ -2,6 +2,7 @@ import os
 import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
 import sys
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from python import (
     txt_to_docx,
@@ -19,6 +20,7 @@ from python import (
     rtf_to_docx,
     rtf_to_pdf,
 )
+
 DOCUMENTOS = {
     "TXT → DOCX": (txt_to_docx, ".docx", [("Arquivos TXT", "*.txt")]),
     "RTF → DOCX": (rtf_to_docx, ".docx", [("Arquivos RTF", "*.rtf")]),
@@ -44,6 +46,7 @@ COMPRESSAO = {
     "ZIP → 7Z": (zip_to_sevenzip, ".7z", [("Arquivos ZIP", "*.zip")]),
 }
 FUNCOES_CONVERSAO = {**DOCUMENTOS, **IMAGENS, **COMPRESSAO}
+
 class ToolTip:
     def __init__(self, widget, text):
         self.widget = widget
@@ -51,6 +54,7 @@ class ToolTip:
         self.tipwindow = None
         widget.bind("<Enter>", self.show_tip)
         widget.bind("<Leave>", self.hide_tip)
+
     def show_tip(self, event=None):
         if self.tipwindow or not self.text:
             return
@@ -70,26 +74,30 @@ class ToolTip:
             font=("Segoe UI", "9", "normal"),
         )
         label.pack(ipadx=5, ipady=3)
+
     def hide_tip(self, event=None):
         if self.tipwindow:
             self.tipwindow.destroy()
             self.tipwindow = None
+
+
 class ConverterApp(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("crowvert")
-        self.geometry("650x500")
+        self.title("Crowvert")
+        self.geometry("800x750")
         self.configure(bg="#ffffff")
         self.resizable(False, False)
         self.arquivos_dict = {}
         style = ttk.Style(self)
         style.theme_use("clam")
+        # Aumentando a fonte dos botões roxos
         style.configure(
             "TButton",
-            font=("Segoe UI", 11, "bold"),
-            padding=8,
+            font=("Segoe UI", 14, "bold"),  # Fonte aumentada de 11 para 14
+            padding=12,  # Padding um pouco maior para botões maiores
             foreground="#ffffff",
-            background="#6f42c1",  
+            background="#6f42c1",
             borderwidth=0,
         )
         style.map(
@@ -106,7 +114,7 @@ class ConverterApp(tk.Tk):
         )
         titulo = tk.Label(
             self,
-            text="crowvert",
+            text="Crowvert",
             bg="#ffffff",
             fg="#6f42c1",
             font=("Segoe UI", 20, "bold"),
@@ -114,20 +122,24 @@ class ConverterApp(tk.Tk):
         titulo.pack(pady=(20, 15))
         frame_controles = tk.Frame(self, bg="#ffffff")
         frame_controles.pack(pady=10, padx=20, fill="x")
+        # Aumentando o tamanho dos ícones (emojis) nos botões, usando emojis maiores (com espaço extra)
         self.btn_selecionar = ttk.Button(
             frame_controles,
-            text="📂 Selecionar Arquivos",
+            text="  📂  Selecionar Arquivos  ",  # Espaço extra para o emoji parecer maior
             command=self.selecionar_arquivos,
-            width=18,
+            width=22,  # Largura aumentada para comportar o emoji maior
         )
         self.btn_converter = ttk.Button(
             frame_controles,
-            text="⚡ Converter",
+            text="   ⚡   Converter   ",  # Espaço extra para o emoji parecer maior
             command=self.converter_arquivos,
-            width=14,
+            width=18,  # Largura aumentada
         )
         self.btn_limpar = ttk.Button(
-            frame_controles, text="🧹 Limpar Lista", command=self.limpar_lista, width=14
+            frame_controles,
+            text="   🧹   Limpar Lista   ",  # Espaço extra para o emoji parecer maior
+            command=self.limpar_lista,
+            width=18,  # Largura aumentada
         )
         self.btn_selecionar.grid(row=0, column=0, padx=5, sticky="ew")
         self.btn_converter.grid(row=0, column=1, padx=5, sticky="ew")
@@ -200,11 +212,13 @@ class ConverterApp(tk.Tk):
         )
         self.barra_progresso.pack(fill="x", padx=20, pady=(15, 20), ipady=5)
         self.atualizar_conversoes()
+
     def atualizar_conversoes(self, event=None):
         categoria = self.categoria_var.get()
         opcoes = list(self.categorias_dict[categoria].keys())
         self.combo_conversao["values"] = opcoes
         self.conversao_var.set(opcoes[0])
+
     def selecionar_arquivos(self):
         option = self.conversao_var.get()
         _, _, tipos = FUNCOES_CONVERSAO.get(
@@ -216,10 +230,12 @@ class ConverterApp(tk.Tk):
             if nome not in self.arquivos_dict:
                 self.arquivos_dict[nome] = caminho
                 self.lista_arquivos.insert(tk.END, nome)
+
     def limpar_lista(self):
         self.lista_arquivos.delete(0, tk.END)
         self.arquivos_dict.clear()
         self.barra_progresso["value"] = 0
+
     def converter_arquivos(self):
         if not self.arquivos_dict:
             messagebox.showwarning("Aviso", "Nenhum arquivo selecionado.")
@@ -240,9 +256,7 @@ class ConverterApp(tk.Tk):
         for i, (nome, caminho_entrada) in enumerate(self.arquivos_dict.items()):
             nome_base = os.path.splitext(nome)[0]
             if option == "PDF → PNG":
-                caminho_saida = (
-                    pasta_saida  
-                )
+                caminho_saida = pasta_saida
             else:
                 caminho_saida = os.path.join(
                     pasta_saida, f"{nome_base}{extensao_saida}"
@@ -266,6 +280,8 @@ class ConverterApp(tk.Tk):
             self.barra_progresso["value"] = i + 1
             self.update_idletasks()
         messagebox.showinfo("Sucesso", f"{total} arquivo(s) convertido(s) com sucesso!")
+
+
 if __name__ == "__main__":
     app = ConverterApp()
     app.mainloop()
