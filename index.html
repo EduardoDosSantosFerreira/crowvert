@@ -4,154 +4,696 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crowvert - Conversor de Arquivos</title>
-  <link rel="icon" type="image" sizes="50x50" href="./src/assets/img/profile_icons/crowico.png">
+  <meta name="description"
+    content="Crowvert - Conversor de arquivos avançado para Windows. Converta entre diversos formatos de imagens, vídeos, áudios e documentos com rapidez e segurança.">
+  <meta name="keywords" content="Crowvert, conversor, converter arquivos, PDF para Word, MP4 para AVI, JPG para PNG">
+  <title>Crowvert - Conversor de Arquivos Avançado</title>
+  <link rel="icon" type="image/png" href="./src/assets/img/profile_icons/crowvert.png">
+
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet">
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="./src/assets/css/style.css">
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <!-- Animations -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-  <!-- add -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <!-- Google Fonts: Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg ">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img src="./src/assets/img/profile_icons/crowvert.png" id="crowico" alt="Crowvert Logo" class="logo-img">
+        <img src="./src/assets/img/profile_icons/crowvert.png" alt="Crowvert Logo" style="height: 36px;" class="mr-2">
+        Crowvert
       </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mx-auto">
+        <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#about"><i class="fas fa-info-circle"></i> Sobre</a>
+            <a class="nav-link" href="#features">Recursos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#features"><i class="fas fa-cogs"></i> Funcionalidades</a>
+            <a class="nav-link" href="#formats">Formatos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#how-to-use"><i class="fas fa-question-circle"></i> Como Usar</a>
+            <a class="nav-link" href="#how-to-use">Como Usar</a>
           </li>
-        </ul>
-        <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link btn btn-outline-light" href="./dist/Crowvert.exe"><i class="fas fa-download"></i> Download</a>
+            <a class="nav-link" href="#screenshots">Screenshots</a>
+          </li>
+          <li class="nav-item ml-lg-3 mt-3 mt-lg-0">
+            <a class="btn btn-download" href="./dist/Crowvert.exe">
+              <i class="fas fa-download mr-2"></i>Download
+            </a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Header -->
-  <header class="header text-white text-center" style="background-color: #000000;">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-8 mx-auto">
-          <h1 class="mt-5 animated-text">
-            <i id="danger" class="fas fa-exchange-alt fa-1x ">ㅤ
-            </i>Crowvert
-          </h1>
-          <p class="lead mb-5">Um software para conversão rápida e eficiente de arquivos em diversos formatos.</p>
+<!-- Hero Section -->
+<section class="hero">
+  <div class="particles-container" id="particles-js"></div>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 order-lg-1 order-2" data-aos="fade-right">
+        <h1 class="hero-title">
+          <span class="hero-title-gradient">Transforme</span> seus arquivos em segundos
+        </h1>
+        <p class="hero-subtitle">
+          Crowvert revoluciona a conversão de arquivos no Windows com tecnologia avançada que preserva a qualidade original em qualquer formato.
+        </p>
+        <div class="hero-buttons">
+          <a href="./dist/Crowvert.exe" class="btn btn-download btn-lg mr-3 mb-3">
+            <i class="fas fa-download mr-2"></i>Baixar Agora - Grátis
+          </a>
+          <a href="#features" class="btn btn-outline-light btn-lg mb-3">
+            <i class="fas fa-play-circle mr-2"></i>Ver Demonstração
+          </a>
         </div>
-        <div class="col-lg-4 text-center">
-          <div class="btn-group">
-            <a href="./dist/Crowvert.exe" class="btn btn-lg btn-outline-light mr-2">Baixar Crowvert</a>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-number" data-count="50">0</div>
+            <div class="stat-label">Formatos Suportados</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-count="99">0</div>
+            <div class="stat-label">Qualidade Preservada</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-count="10">0</div>
+            <div class="stat-label">Segundos em Média</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 order-lg-2 order-1" data-aos="fade-left">
+        <div class="hero-interface">
+          <div class="interface-window">
+            <div class="window-header">
+              <div class="window-buttons">
+                <span class="window-btn red"></span>
+                <span class="window-btn yellow"></span>
+                <span class="window-btn green"></span>
+              </div>
+              <div class="window-title">Crowvert Converter</div>
+            </div>
+            <div class="window-content">
+              <div class="file-drop-area">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <h4>Arraste seus arquivos aqui</h4>
+                <p>ou clique para selecionar</p>
+              </div>
+              <div class="format-selector">
+                <div class="format-option active">
+                  <i class="fas fa-file-image"></i>
+                  <span>Imagem</span>
+                </div>
+                <div class="format-option">
+                  <i class="fas fa-file-video"></i>
+                  <span>Vídeo</span>
+                </div>
+                <div class="format-option">
+                  <i class="fas fa-file-audio"></i>
+                  <span>Áudio</span>
+                </div>
+                <div class="format-option">
+                  <i class="fas fa-file-alt"></i>
+                  <span>Documento</span>
+                </div>
+              </div>
+              <div class="conversion-progress">
+                <div class="progress-bar" style="width: 75%"></div>
+                <div class="progress-text">Convertendo: 75%</div>
+              </div>
+              <button class="convert-btn">
+                <i class="fas fa-bolt"></i> Converter Agora
+              </button>
+            </div>
+          </div>
+          <div class="floating-icons">
+            <div class="icon-file floating-1">
+              <i class="fas fa-file-pdf"></i>
+            </div>
+            <div class="icon-file floating-2">
+              <i class="fas fa-file-image"></i>
+            </div>
+            <div class="icon-file floating-3">
+              <i class="fas fa-file-video"></i>
+            </div>
+            <div class="icon-file floating-4">
+              <i class="fas fa-file-audio"></i>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </header>
+  </div>
+</section>
 
-  <!-- Sobre -->
-  <section id="about" class="py-5 bg-light">
+<style>
+  .hero {
+    position: relative;
+    padding: 180px 0 120px;
+    background: linear-gradient(135deg, var(--dark-color) 0%, #2a0b6e 100%);
+    color: white;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(162, 89, 230, 0.2);
+  }
+
+  .particles-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+
+  .hero-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    position: relative;
+  }
+
+  .hero-title-gradient {
+    background: linear-gradient(90deg, #a259e6, #7209b7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+  }
+
+  .hero-title-gradient::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: rgba(162, 89, 230, 0.3);
+    z-index: -1;
+    border-radius: 4px;
+    filter: blur(5px);
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--muted-color);
+    margin-bottom: 40px;
+    max-width: 500px;
+  }
+
+  .hero-interface {
+    position: relative;
+    perspective: 1000px;
+    margin-left: 30px;
+  }
+
+  .interface-window {
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(162, 89, 230, 0.3);
+    overflow: hidden;
+    transform: rotateY(-10deg) rotateX(5deg);
+    transition: transform 0.5s ease;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-interface:hover .interface-window {
+    transform: rotateY(-5deg) rotateX(3deg);
+  }
+
+  .window-header {
+    background: rgba(30, 30, 40, 0.8);
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(162, 89, 230, 0.1);
+  }
+
+  .window-buttons {
+    display: flex;
+    gap: 8px;
+  }
+
+  .window-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: block;
+  }
+
+  .window-btn.red { background: #ff5f56; }
+  .window-btn.yellow { background: #ffbd2e; }
+  .window-btn.green { background: #27c93f; }
+
+  .window-title {
+    margin-left: 15px;
+    font-size: 0.9rem;
+    color: var(--muted-color);
+  }
+
+  .window-content {
+    padding: 30px;
+  }
+
+  .file-drop-area {
+    border: 2px dashed rgba(162, 89, 230, 0.3);
+    border-radius: 12px;
+    padding: 40px 20px;
+    text-align: center;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+  }
+
+  .file-drop-area:hover {
+    border-color: var(--secondary-color);
+    background: rgba(162, 89, 230, 0.05);
+  }
+
+  .file-drop-area i {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+  }
+
+  .file-drop-area h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: var(--light-color);
+  }
+
+  .file-drop-area p {
+    color: var(--muted-color);
+    font-size: 0.9rem;
+  }
+
+  .format-selector {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+
+  .format-option {
+    flex: 1;
+    text-align: center;
+    padding: 12px 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .format-option i {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    color: var(--muted-color);
+  }
+
+  .format-option span {
+    font-size: 0.85rem;
+    color: var(--muted-color);
+  }
+
+  .format-option.active {
+    background: rgba(162, 89, 230, 0.1);
+    border: 1px solid rgba(162, 89, 230, 0.3);
+  }
+
+  .format-option.active i,
+  .format-option.active span {
+    color: var(--secondary-color);
+  }
+
+  .conversion-progress {
+    background: rgba(30, 30, 40, 0.5);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 25px;
+  }
+
+  .progress-bar {
+    height: 8px;
+    background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+    border-radius: 4px;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+      transparent, 
+      rgba(255, 255, 255, 0.4), 
+      transparent);
+    animation: progressShine 2s infinite;
+  }
+
+  .progress-text {
+    font-size: 0.85rem;
+    color: var(--muted-color);
+    text-align: center;
+  }
+
+  .convert-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .convert-btn i {
+    margin-right: 10px;
+  }
+
+  .convert-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(114, 9, 183, 0.3);
+  }
+
+  .floating-icons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
+
+  .icon-file {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(162, 89, 230, 0.2);
+  }
+
+  .floating-1 {
+    top: -50px;
+    right: -20px;
+    animation: float1 8s ease-in-out infinite;
+  }
+
+  .floating-2 {
+    bottom: 30px;
+    right: -70px;
+    animation: float2 10s ease-in-out infinite 2s;
+  }
+
+  .floating-3 {
+    top: 50%;
+    left: -50px;
+    animation: float3 9s ease-in-out infinite 1s;
+  }
+
+  .floating-4 {
+    bottom: -60px;
+    left: 20%;
+    animation: float4 7s ease-in-out infinite 0.5s;
+  }
+
+  .hero-stats {
+    display: flex;
+    margin-top: 40px;
+    gap: 20px;
+  }
+
+  .stat-item {
+    text-align: center;
+  }
+
+  .stat-number {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+    color: var(--muted-color);
+  }
+
+  @keyframes float1 {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+  }
+
+  @keyframes float2 {
+    0% { transform: translateY(0) rotate(5deg); }
+    50% { transform: translateY(15px) rotate(-5deg); }
+    100% { transform: translateY(0) rotate(5deg); }
+  }
+
+  @keyframes float3 {
+    0% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+    100% { transform: translateY(0) rotate(-5deg); }
+  }
+
+  @keyframes float4 {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(10px) rotate(10deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+  }
+
+  @keyframes progressShine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  @media (max-width: 992px) {
+    .hero-title {
+      font-size: 2.8rem;
+    }
+    
+    .hero-interface {
+      margin-left: 0;
+      margin-bottom: 50px;
+    }
+    
+    .hero-stats {
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: 150px 0 80px;
+    }
+    
+    .hero-title {
+      font-size: 2.3rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+    
+    .interface-window {
+      transform: none;
+    }
+    
+    .hero-interface:hover .interface-window {
+      transform: none;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .hero-title {
+      font-size: 2rem;
+    }
+    
+    .hero-buttons .btn {
+      display: block;
+      width: 100%;
+      margin-right: 0 !important;
+      margin-bottom: 15px;
+    }
+    
+    .hero-stats {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+</style>
+
+<script>
+  // Adicione este script no final do body ou em um arquivo JS separado
+  document.addEventListener('DOMContentLoaded', function() {
+    // Efeito de contagem nos números
+    const statNumbers = document.querySelectorAll('.stat-number');
+    
+    statNumbers.forEach(stat => {
+      const target = parseInt(stat.getAttribute('data-count'));
+      const duration = 2000; // 2 segundos
+      const steps = 20;
+      const increment = target / steps;
+      let current = 0;
+      
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          clearInterval(timer);
+          current = target;
+        }
+        stat.textContent = Math.floor(current);
+      }, duration / steps);
+    });
+    
+    // Inicialize o particles.js (você precisará incluir a biblioteca particles.js)
+    // particlesJS.load('particles-js', 'particles-config.json');
+  });
+</script>
+
+  <!-- Features Section -->
+  <section id="features" class="py-5" style="padding: 100px 0;">
     <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Recursos Poderosos</h2>
+      <p class="text-muted mb-5" data-aos="fade-up" data-aos-delay="50">Tudo que você precisa para conversão de arquivos
+        em um só lugar</p>
+
       <div class="row">
-        <div class="col-lg-8 mx-auto text-center">
-          <h2 class="section-heading">Sobre o Crowvert</h2>
-          <p class="text-muted" style="font-size: 1.25rem;">O Crowvert é um software desenvolvido para oferecer uma maneira eficiente de
-            converter arquivos entre diferentes formatos. Utilizando uma interface gráfica intuitiva, o Crowvert permite
-            aos usuários realizar diversas conversões essenciais:</p>
-        </div>
-      </div>
-      <div class="row mt-4">
-        <div class="col-md-4 text-center">
-          <div class="feature-item">
-            <i class="fas fa-file-image feature-icon"></i>
+        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-file-image"></i>
+            </div>
             <h3 class="feature-title">Conversão de Imagens</h3>
-            <p class="text-muted">Converta entre formatos como JPG, PNG, WEBP, GIF e mais.</p>
+            <p class="feature-text">
+              Converta entre os principais formatos de imagem sem perder qualidade. Suporte para JPG, PNG, WEBP, GIF e
+              muito mais.
+            </p>
+            <ul class="feature-list">
+              <li>Preservação de metadados</li>
+              <li>Controle de qualidade</li>
+              <li>Conversão em lote</li>
+              <li>Redimensionamento opcional</li>
+            </ul>
           </div>
         </div>
-        <div class="col-md-4 text-center">
-          <div class="feature-item">
-            <i class="fas fa-file-video feature-icon"></i>
+
+        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-file-video"></i>
+            </div>
             <h3 class="feature-title">Conversão de Vídeos</h3>
-            <p class="text-muted">Suporte para MP4, AVI, MKV, MOV e outros formatos populares.</p>
+            <p class="feature-text">
+              Transforme seus vídeos entre formatos populares como MP4, AVI, MKV, MOV e outros com rapidez e eficiência.
+            </p>
+            <ul class="feature-list">
+              <li>Seleção de codecs</li>
+              <li>Ajuste de resolução</li>
+              <li>Extração de áudio</li>
+              <li>Compressão inteligente</li>
+            </ul>
           </div>
         </div>
-        <div class="col-md-4 text-center">
-          <div class="feature-item">
-            <i class="fas fa-file-audio feature-icon"></i>
+
+        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-file-audio"></i>
+            </div>
             <h3 class="feature-title">Conversão de Áudio</h3>
-            <p class="text-muted">Converta entre MP3, WAV, FLAC, AAC e outros formatos de áudio.</p>
+            <p class="feature-text">
+              Altere o formato de seus arquivos de áudio entre MP3, WAV, FLAC, AAC e outros, mantendo a qualidade
+              original.
+            </p>
+            <ul class="feature-list">
+              <li>Controle de bitrate</li>
+              <li>Extração de áudio de vídeos</li>
+              <li>Normalização de volume</li>
+              <li>Edição de metadados</li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Segurança -->
-  <section id="security" class="py-5">
+  <!-- Supported Formats Section -->
+  <section id="formats" class="py-5" style="padding: 100px 0; background-color: var(--section-bg);">
     <div class="container">
+      <h2 class="section-title text-center" data-aos="fade-up">Formatos Suportados</h2>
+      <p class="text-muted text-center mb-5" data-aos="fade-up" data-aos-delay="50">Conversão entre os principais
+        formatos do mercado</p>
+
       <div class="row">
-        <div class="col-lg-8 mx-auto text-center">
-          <h2 class="section-heading">Segurança do Crowvert</h2>
-          <div class="row justify-content-center">
-            <div class="col-md-10">
-              <div class="row mb-4">
-                <div class="col-auto text-center">
-                  <i id="danger" class="fas fa-shield-alt fa-3x text-white"></i>
-                </div>
-                <div class="col">
-                  <p class="text-muted">
-                    O Crowvert processa todos os arquivos localmente, garantindo que seus dados nunca saiam do seu
-                    computador durante o processo de conversão.
-                  </p>
-                </div>
-              </div>
-              <div class="row mb-4">
-                <div class="col-auto text-center">
-                  <i id="danger" class="fas fa-user-lock fa-3x text-white"></i>
-                </div>
-                <div class="col">
-                  <p class="text-muted">
-                    Desenvolvido em Python com Tkinter, o Crowvert não requer conexão com a internet nem instalação de
-                    componentes externos.
-                  </p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-auto text-center">
-                  <i id="danger" class="fas fa-check-circle fa-3x text-white"></i>
-                </div>
-                <div class="col">
-                  <p class="text-muted">
-                    Compromisso com a qualidade e integridade dos arquivos convertidos, mantendo a melhor qualidade
-                    possível em cada conversão.
-                  </p>
-                </div>
-              </div>
+        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="feature-card">
+            <h3 class="feature-title text-center">Documentos</h3>
+            <div class="mt-4 text-center">
+              <span class="format-badge">TXT → DOCX</span>
+              <span class="format-badge">DOCX → TXT</span>
+              <span class="format-badge">DOCX → PDF</span>
+              <span class="format-badge">PDF → DOCX</span>
+              <span class="format-badge">ODT → DOCX</span>
+              <span class="format-badge">RTF → DOCX</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-card">
+            <h3 class="feature-title text-center">Compactados</h3>
+            <div class="mt-4 text-center">
+              <span class="format-badge">ZIP → 7Z</span>
+              <span class="format-badge">7Z → ZIP</span>
+              <span class="format-badge">RAR → ZIP</span>
+              <span class="format-badge">TAR → ZIP</span>
+              <span class="format-badge">GZ → ZIP</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="feature-card">
+            <h3 class="feature-title text-center">Outros Formatos</h3>
+            <div class="mt-4 text-center">
+              <span class="format-badge">SVG → PNG</span>
+              <span class="format-badge">SVG → JPG</span>
+              <span class="format-badge">BMP → PNG</span>
+              <span class="format-badge">TIFF → JPG</span>
+              <span class="format-badge">HEIC → JPG</span>
             </div>
           </div>
         </div>
@@ -159,111 +701,211 @@
     </div>
   </section>
 
-  <!-- Funcionalidades -->
-  <section id="features" class="bg-light py-5">
+  <!-- How To Use Section -->
+  <section id="how-to-use" class="py-5" style="padding: 100px 0;">
+    <div class="container">
+      <h2 class="section-title text-center" data-aos="fade-up">Como Usar</h2>
+      <p class="text-muted text-center mb-5" data-aos="fade-up" data-aos-delay="50">Simples, rápido e intuitivo - em
+        apenas 4 passos</p>
+
+      <div class="row">
+        <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="how-to-use-item">
+            <div class="text-center">
+              <i class="fas fa-mouse-pointer how-to-use-icon"></i>
+            </div>
+            <h3 class="text-center">Seleção Simples</h3>
+            <p class="text-center">
+              Arraste e solte seus arquivos na interface ou use o botão de seleção para escolher os arquivos que deseja
+              converter.
+            </p>
+            <div class="text-center">
+              <span class="badge-crow">Fácil</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="how-to-use-item">
+            <div class="text-center">
+              <i class="fas fa-cog how-to-use-icon"></i>
+            </div>
+            <h3 class="text-center">Configuração Rápida</h3>
+            <p class="text-center">
+              Selecione o formato de destino e ajuste as opções específicas para cada tipo de conversão, como qualidade
+              e resolução.
+            </p>
+            <div class="text-center">
+              <span class="badge-crow">Personalizável</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="how-to-use-item">
+            <div class="text-center">
+              <i class="fas fa-bolt how-to-use-icon"></i>
+            </div>
+            <h3 class="text-center">Conversão Rápida</h3>
+            <p class="text-center">
+              Clique em "Converter" e aguarde alguns segundos. O Crowvert processa seus arquivos localmente com máxima
+              velocidade.
+            </p>
+            <div class="text-center">
+              <span class="badge-crow">Eficiente</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+          <div class="how-to-use-item">
+            <div class="text-center">
+              <i class="fas fa-folder-open how-to-use-icon"></i>
+            </div>
+            <h3 class="text-center">Resultados Organizados</h3>
+            <p class="text-center">
+              Seus arquivos convertidos são salvos em uma pasta organizada, mantendo sua área de trabalho limpa e
+              arrumada.
+            </p>
+            <div class="text-center">
+              <span class="badge-crow">Organizado</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de Screenshots Melhorada -->
+  <section id="screenshots" class="screenshot-section py-5"
+    style="background: linear-gradient(135deg, #15151c 0%, #3a0ca3 100%);">
+    <div class="container">
+      <h2 class="section-title text-center mb-3" data-aos="fade-up">Interface Intuitiva</h2>
+      <p class="text-muted text-center mb-5" data-aos="fade-up" data-aos-delay="50">
+        Veja como o Crowvert oferece uma experiência visual moderna, limpa e fácil de usar.
+      </p>
+      <div class="row justify-content-center align-items-center">
+        <div class="col-lg-10 col-md-12" data-aos="zoom-in" data-aos-delay="100">
+          <div class="screenshot-frame p-3 p-md-4"
+            style="background: #1a1a23; border-radius: 18px; box-shadow: 0 8px 40px rgba(114,9,183,0.18);">
+            <img src="./src/assets/img/web/img1.png" alt="Seleção de Arquivos" class="screenshot-img img-fluid"
+              style="width: 100%; max-width: 500px; border-radius: 12px; box-shadow: 0 4px 32px rgba(0,0,0,0.25); display: block; margin-left: auto; margin-right: auto;">
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4 justify-content-center">
+        <div class="col-md-8 text-center">
+          <p class="text-light" style="font-size: 1.1rem;">
+            A interface do Crowvert foi pensada para ser intuitiva, permitindo que qualquer pessoa realize conversões em
+            poucos cliques, sem complicação.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="cta-title" data-aos="fade-up">Pronto para converter seus arquivos?</h2>
+      <p class="cta-text" data-aos="fade-up" data-aos-delay="100">
+        Baixe agora o Crowvert e tenha todas as ferramentas de conversão que você precisa em um único lugar. Rápido,
+        seguro e gratuito.
+      </p>
+      <a href="./dist/Crowvert.exe" class="btn btn-download btn-lg" data-aos="fade-up" data-aos-delay="200">
+        <i class="fas fa-download mr-2"></i>Baixar Agora - Grátis
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
     <div class="container">
       <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <h2 class="section-heading text-center">Funcionalidades do Crowvert</h2>
-          <p class="text-center mb-5">Conheça as principais funcionalidades oferecidas pelo Crowvert:</p>
-          <ul class="list-unstyled">
-            <li><i class="fas fa-check-circle text-purple"></i> Conversão de TXT para DOCX</li>
-            <li><i class="fas fa-check-circle text-purple"></i> Conversão de DOCX para TXT</li>
-            <li><i class="fas fa-check-circle text-purple"></i> Conversão de DOCX para PDF</li>
-            <li><i class="fas fa-check-circle text-purple"></i> Conversão de PDF para DOCX</li>
-            <li><i class="fas fa-check-circle text-purple"></i> Conversão de 7Z para ZIP</li>
-            <li><i class="fas fa-check-circle text-purple"></i> Conversão de ZIP para 7Z</li>
-            <li><i class="fas fa-check-circle text-purple"></i> Conversão de SVG para PNG</li>
+        <div class="col-md-4 mb-5">
+          <img src="./src/assets/img/profile_icons/crowvert.png" alt="Crowvert Logo" class="footer-logo">
+          <p class="mt-3">Crowvert é a solução completa para conversão de arquivos no Windows. Desenvolvido para ser
+            rápido, seguro e fácil de usar.</p>
+          <div class="social-icons mt-4">
+            <a href="https://github.com/EduardoDosSantosFerreira"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/eduardodossantosferreira/"><i class="fab fa-linkedin"></i></a>
+            <a href="https://discordapp.com/users/eduardo_dsf"><i class="fab fa-discord"></i></a>
+            <a href="mailto:eduardosferreira69@gmail.com"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+        <div class="col-md-2 mb-5">
+          <h5>Links</h5>
+          <ul class="footer-links">
+            <li><a href="#features">Recursos</a></li>
+            <li><a href="#formats">Formatos</a></li>
+            <li><a href="#how-to-use">Como Usar</a></li>
+            <li><a href="#screenshots">Screenshots</a></li>
+            <li><a href="./dist/Crowvert.exe">Download</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-5">
+          <h5>Recursos</h5>
+          <ul class="footer-links">
+            <li><a href="#">Documentação</a></li>
+            <li><a href="#">Changelog</a></li>
+            <li><a href="#">Roadmap</a></li>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Reportar Bug</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-5">
+          <h5>Contato</h5>
+          <ul class="footer-links">
+            <li><a href="mailto:eduardosferreira69@gmail.com">eduardosferreira69@gmail.com</a></li>
+            <li><a href="https://github.com/EduardoDosSantosFerreira">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/eduardodossantosferreira/">LinkedIn</a></li>
+            <li><a href="https://discordapp.com/users/eduardo_dsf">Discord</a></li>
           </ul>
         </div>
       </div>
-    </div>
-  </section>
-
-<!-- Como Usar -->
-<section id="how-to-use" class="py-5" style="background-color: black;">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 mx-auto text-center">
-          <h2 class="section-heading mb-4 text-white">Como Usar o Crowvert</h2>
-          <div class="row text-white">
-            <div class="col-md-6">
-              <div class="feature-item">
-                <div class="feature-icon mb-3">
-                  <i class="fas fa-mouse-pointer fa-3x"></i>
-                </div>
-                <h3 class="feature-title">Seleção de Arquivos</h3>
-                <p style="color: black;">Escolha um ou mais arquivos que deseja converter por meio da interface gráfica.</p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="feature-item">
-                <div class="feature-icon mb-3">
-                  <i class="fas fa-exchange-alt fa-3x"></i>
-                </div>
-                <h3 class="feature-title">Escolha do Formato</h3>
-                <p style="color: black;">Selecione o formato de destino (ex: JPG, MP3, MP4) e clique em "Converter".</p>
-              </div>
-            </div>
-          </div>
-          <div class="row mt-4 text-white">
-            <div class="col-md-6">
-              <div class="feature-item">
-                <div class="feature-icon mb-3">
-                  <i class="fas fa-bolt fa-3x"></i>
-                </div>
-                <h3 class="feature-title">Processamento Rápido</h3>
-                <p style="color: black;">A conversão é realizada localmente e com rapidez, mesmo em múltiplos arquivos.</p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="feature-item">
-                <div class="feature-icon mb-3">
-                  <i class="fas fa-lock fa-3x"></i>
-                </div>
-                <h3 class="feature-title">Privacidade Garantida</h3>
-                <p style="color: black;">Seus arquivos nunca são enviados para a nuvem — tudo acontece no seu PC.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="copyright text-center">
+        <p>&copy; 2025 Eduardo S Ferreira. Todos os direitos reservados. | Crowvert - Conversor de Arquivos Avançado</p>
       </div>
-    </div>
-  </section>
-
-  <!-- Rodapé -->
-  <footer class="py-5">
-    <div class="container text-center">
-      <div class="row justify-content-center align-items-center">
-        <div class="col-md-12">
-          <img src="./src/assets/img/profile_icons/crowvert.png" id="footer-icon" alt="corvo" style="width: 50px;"
-            class="footer-logo">
-          <hr class="bg-white">
-        </div>
-        <div class="col-md-12">
-          <a href="http://"><img src="./src/assets/img/icons/wts.png" alt="Whatsapp" title="Whatsapp" id="ico-ftr"></a>
-          <a href="https://www.linkedin.com/in/eduardodossantosferreira/"><img src="./src/assets/img/icons/in.png" alt="Linkedin" title="Linkedin" id="ico-ftr"></a>
-          <a href="https://discordapp.com/users/eduardo_dsf"><img src="./src/assets/img/icons/dc.png" alt="Discord" title="Discord" id="ico-ftr"></a>
-          <a href="mailto:eduardosferreira69@gmail.com"><img src="./src/assets/img/icons/gmail.png" alt="Gmail" title="Gmail" id="ico-ftr"></a>
-          <a href="https://github.com/EduardoDosSantosFerreira"><img src="./src/assets/img/icons/github.png" alt="Github" title="Github" id="ico-ftr"></a>
-        </div>
-      </div>
-      <br>
-      <p>&copy; 2025 Eduardo S Ferreira.</p>
     </div>
   </footer>
 
   <!-- Bootstrap JS, Popper.js, jQuery -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
-    integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
-    crossorigin="anonymous"></script>
-  <script src="./src/assets/js/script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
+  <!-- AOS Animation -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Custom JS -->
+  <script>
+    // Initialize AOS animation
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
+
+    // Navbar scroll effect
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > 50) {
+        $('.navbar').addClass('scrolled');
+      } else {
+        $('.navbar').removeClass('scrolled');
+      }
+    });
+
+    // Smooth scrolling for anchor links
+    $('a[href*="#"]').on('click', function (e) {
+      e.preventDefault();
+
+      $('html, body').animate(
+        {
+          scrollTop: $($(this).attr('href')).offset().top - 70,
+        },
+        500,
+        'linear'
+      );
+    });
+  </script>
 </body>
 
 </html>
