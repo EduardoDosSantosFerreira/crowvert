@@ -1,6 +1,5 @@
 # Forçar identificação correta das linguagens
 *.py linguist-language=Python
-*.html linguist-language=HTML
 *.css linguist-language=CSS
 *.js linguist-language=JavaScript
 *.tex linguist-language=ignore
